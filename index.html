@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페 메뉴 주문 시스템</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 아임포트 SDK 추가 -->
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.2.0.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>카페 메뉴 주문 시스템</h1>
+            <div class="theme-selector">
+                <div class="theme-buttons">
+                    <button class="theme-btn" data-theme="modern">
+                        <span class="theme-icon modern"></span>
+                        <span class="theme-name">모던</span>
+                    </button>
+                    <button class="theme-btn" data-theme="classic">
+                        <span class="theme-icon classic"></span>
+                        <span class="theme-name">클래식</span>
+                    </button>
+                    <button class="theme-btn" data-theme="minimal">
+                        <span class="theme-icon minimal"></span>
+                        <span class="theme-name">미니멀</span>
+                    </button>
+                    <button class="theme-btn" data-theme="dark">
+                        <span class="theme-icon dark"></span>
+                        <span class="theme-name">다크 모드</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="menu-board">
+            <div class="menu-category">
+                <h2>커피</h2>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="아메리카노" data-price="3000">
+                        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="아메리카노">
+                        <h3>아메리카노</h3>
+                        <p>₩3,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="카페라떼" data-price="4000">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="카페라떼">
+                        <h3>카페라떼</h3>
+                        <p>₩4,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="카푸치노" data-price="4000">
+                        <img src="https://images.unsplash.com/photo-1517256064527-09c73fc73e38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="카푸치노">
+                        <h3>카푸치노</h3>
+                        <p>₩4,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="바닐라라떼" data-price="4500">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="바닐라라떼">
+                        <h3>바닐라라떼</h3>
+                        <p>₩4,500</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="카라멜마끼아또" data-price="4500">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="카라멜마끼아또">
+                        <h3>카라멜마끼아또</h3>
+                        <p>₩4,500</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="에스프레소" data-price="3500">
+                        <img src="https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="에스프레소">
+                        <h3>에스프레소</h3>
+                        <p>₩3,500</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>디저트</h2>
+                <div class="menu-items">
+                    <div class="menu-item" data-name="치즈케이크" data-price="5000">
+                        <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="치즈케이크">
+                        <h3>치즈케이크</h3>
+                        <p>₩5,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="티라미수" data-price="5500">
+                        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="티라미수">
+                        <h3>티라미수</h3>
+                        <p>₩5,500</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="초코무스" data-price="5000">
+                        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="초코무스">
+                        <h3>초코무스</h3>
+                        <p>₩5,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="마카롱" data-price="3000">
+                        <img src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="마카롱">
+                        <h3>마카롱</h3>
+                        <p>₩3,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="크로플" data-price="4500">
+                        <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="크로플">
+                        <h3>크로플</h3>
+                        <p>₩4,500</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                    <div class="menu-item" data-name="브라우니" data-price="4000">
+                        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="브라우니">
+                        <h3>브라우니</h3>
+                        <p>₩4,000</p>
+                        <button class="order-btn">주문하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>장바구니</h2>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-total">
+                <p>총 합계: <span id="totalPrice">₩0</span></p>
+                <button id="checkoutBtn" class="checkout-btn">결제하기</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
